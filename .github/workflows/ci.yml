@@ -86,7 +86,7 @@ jobs:
         run: ./gradlew test --tests "api.veiculos.e2e.*"
 
   deploy:
-    needs: [unit-tests, integration-tests, e2e-tests, sonarqube-analysis]
+    needs: [unit-tests, integration-tests, e2e-tests]
     runs-on: ubuntu-latest
 
     steps:
