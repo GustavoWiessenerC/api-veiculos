@@ -26,7 +26,7 @@ jobs:
         run: ./gradlew build --info
 
       - name: Report in sonarQube
-        run: ./gradle test jacocoTestReport sonarqube
+        run: ./gradlew test jacocoTestReport sonarqube
 
   unit-tests:
     runs-on: ubuntu-latest
