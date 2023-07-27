@@ -23,9 +23,8 @@ A API oferece os seguintes endpoints:
 
 - A API está documentada usando a especificação Swagger. Para acessar a documentação da API, acesse http://localhost:8080/swagger-ui.html após iniciar o projeto.
 
+![](swagger.PNG)
 
-- ![](swagger.PNG)
-- 
 ### Execute o projeto usando o Gradle:
 - ./gradlew bootRun
 
