@@ -46,7 +46,6 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-
 sonar {
 	properties {
 		property "sonar.projectKey", "GustavoWiessenerC_api-veiculos"
@@ -54,7 +53,6 @@ sonar {
 		property "sonar.host.url", "https://sonarcloud.io"
 	}
 }
-
 jacocoTestReport {
 	reports {
 		xml {
