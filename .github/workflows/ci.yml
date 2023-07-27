@@ -45,9 +45,10 @@ jobs:
       - name: SonarCloud Analysis
         uses: sonarsource/sonarcloud-github-action@master
         with:
-          organization: ${{ secrets.ORGANIZATION }}
-          token: ${{ secrets.SONAR_TOKEN }}
           projectBaseDir: ./
+          env:
+            ORGANIZATION: ${{ secrets.ORGANIZATION }}
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   unit-tests:
     runs-on: ubuntu-latest
