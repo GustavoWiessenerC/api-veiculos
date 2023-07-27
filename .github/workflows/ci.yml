@@ -50,6 +50,7 @@ jobs:
           ORGANIZATION: ${{ secrets.ORGANIZATION }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+
   unit-tests:
     runs-on: ubuntu-latest
     needs: [build]
