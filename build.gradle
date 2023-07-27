@@ -52,8 +52,12 @@ sonar {
 		property "sonar.projectKey", "GustavoWiessenerC_api-veiculos"
 		property "sonar.organization", "gustavowiessenerc"
 		property "sonar.host.url", "https://sonarcloud.io"
+		property "sonar.junit.reportPaths", "build/test-results/test"
+		property "sonar.coverage.jacoco.xmlReportPaths", "$buildDir/customJacocoReportDir/test.exec"
 	}
 }
+
+
 
 
 jacocoTestReport {
