@@ -43,7 +43,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: SonarCloud Analysis
-        uses: sonarsource/sonarcloud-github-action@v2
+        uses: sonarsource/sonarcloud-github-action@main
         with:
           organization: ${{ secrets.ORGANIZATION }}
           token: ${{ secrets.SONAR_TOKEN }}
