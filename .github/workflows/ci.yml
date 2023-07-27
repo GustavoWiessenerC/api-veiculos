@@ -23,7 +23,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build with Gradle and run SonarQube analysis
-        run: ./gradlew build jacocoTestReport sonarqube -Dsonar.login=8aab303e4164bede30c7bd3865005e36f4299103
+        run: ./gradlew build jacocoTestReport sonar -Dsonar.token=8aab303e4164bede30c7bd3865005e36f4299103
 
   unit-tests:
     runs-on: ubuntu-latest
