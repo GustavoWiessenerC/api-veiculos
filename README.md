@@ -26,9 +26,14 @@ A API oferece os seguintes endpoints:
 ![](swagger.PNG)
 
 
-## Jobs:
+### Jobs:
 
 ![](jobs.PNG)
+
+### Cobertura de Código:
+
+![](test.PNG)
+
 
 ### Execute o projeto usando o Gradle:
 - ./gradlew bootRun

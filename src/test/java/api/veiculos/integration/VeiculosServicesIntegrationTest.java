@@ -23,20 +23,20 @@ public class VeiculosServicesIntegrationTest {
     private BuilderGenerete builderGenerete;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         RestAssured.port = port;
         builderGenerete = new BuilderGenerete();
     }
 
     @Test
-    public void testCreateVeiculo() {
+    void testCreateVeiculo() {
         VeiculosEntity veiculo = builderGenerete.builderVeiculo();
 
         createOperationVeiculoResultInId(veiculo);
     }
 
     @Test
-    public void testCreateVeiculoAndGetById() {
+    void testCreateVeiculoAndGetById() {
         VeiculosEntity veiculo = builderGenerete.builderVeiculo();
 
         int createdVeiculoId = createOperationVeiculoResultInId(veiculo);
@@ -53,7 +53,7 @@ public class VeiculosServicesIntegrationTest {
     }
 
     @Test
-    public void testCreateAndGetAll() {
+    void testCreateAndGetAll() {
         VeiculosEntity veiculo = builderGenerete.builderVeiculo();
 
         createOperationVeiculoResultInId(veiculo);
@@ -71,7 +71,7 @@ public class VeiculosServicesIntegrationTest {
     }
 
     @Test
-    public void testPutVeiculo() {
+    void testPutVeiculo() {
 
         VeiculosEntity veiculoInicial = builderGenerete.builderVeiculo();
 
@@ -108,7 +108,7 @@ public class VeiculosServicesIntegrationTest {
 
 
     @Test
-    public void testInDeleteOperation() {
+    void testInDeleteOperation() {
 
         VeiculosEntity veiculo = builderGenerete.builderVeiculo();
 

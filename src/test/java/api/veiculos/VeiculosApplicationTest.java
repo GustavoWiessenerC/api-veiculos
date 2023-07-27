@@ -8,10 +8,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class VeiculosApplicationTest {
 
     @Test
-    public void contextLoads() {}
+    void contextLoads() {}
 
     @Test
-    public void main() {
+    void main() {
         VeiculosApplication.main(new String[]{});
     }
 }

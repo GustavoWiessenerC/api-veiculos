@@ -36,13 +36,13 @@ public class VeiculosServiceTest {
     private BuilderGenerete veiculoBuilderInTest;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         MockitoAnnotations.openMocks(this);
         veiculoBuilderInTest = new BuilderGenerete();
     }
 
     @Test
-    public void testGetAllVeiculos_ReturnsListOfVeiculos() {
+    void testGetAllVeiculos_ReturnsListOfVeiculos() {
         List<VeiculosEntity> veiculosList = new ArrayList<>();
         VeiculosEntity veiculo = veiculoBuilderInTest.builderVeiculo();
 
@@ -55,7 +55,7 @@ public class VeiculosServiceTest {
     }
 
     @Test
-    public void testCreateVeiculo_ReturnsSavedVeiculoEntity() {
+    void testCreateVeiculo_ReturnsSavedVeiculoEntity() {
         VeiculosEntity veiculo = veiculoBuilderInTest.builderVeiculo();
         when(veiculosRepository.save(veiculo)).thenReturn(veiculo);
 
@@ -65,7 +65,7 @@ public class VeiculosServiceTest {
     }
 
     @Test
-    public void testGetVeiculoFindById_ExistingId_ReturnsOptionalVeiculoEntity() {
+    void testGetVeiculoFindById_ExistingId_ReturnsOptionalVeiculoEntity() {
         Long id = 1L;
         VeiculosEntity veiculoEntity = veiculoBuilderInTest.builderVeiculo();
         when(veiculoBuilder.builderById(id)).thenReturn(Optional.of(veiculoEntity));
@@ -76,7 +76,7 @@ public class VeiculosServiceTest {
     }
 
     @Test
-    public void testGetVeiculoFindById_NonExistingId_ReturnsEmptyOptional() {
+    void testGetVeiculoFindById_NonExistingId_ReturnsEmptyOptional() {
         Long id = 2L;
         when(veiculoBuilder.builderById(id)).thenReturn(Optional.empty());
 
@@ -86,7 +86,7 @@ public class VeiculosServiceTest {
     }
 
     @Test
-    public void testPutVeiculo_ExistingId_ReturnsUpdatedVeiculoEntity() {
+    void testPutVeiculo_ExistingId_ReturnsUpdatedVeiculoEntity() {
         Long id = 1L;
         VeiculosEntity veiculo = veiculoBuilderInTest.builderVeiculo();
         VeiculosEntity updatedVeiculo = new VeiculosEntity();
@@ -102,7 +102,7 @@ public class VeiculosServiceTest {
     }
 
     @Test
-    public void testPutVeiculo_NonExistingId_ThrowsIllegalArgumentException() {
+    void testPutVeiculo_NonExistingId_ThrowsIllegalArgumentException() {
         Long id = 2L;
         VeiculosEntity veiculo = new VeiculosEntity();
         Optional<VeiculosEntity> veiculoExistente = Optional.empty();
@@ -113,7 +113,7 @@ public class VeiculosServiceTest {
     }
 
     @Test
-    public void testDeleteVeiculo_ExistingId_ReturnsDeletedVeiculoEntity() {
+    void testDeleteVeiculo_ExistingId_ReturnsDeletedVeiculoEntity() {
         Long id = 1L;
         VeiculosEntity veiculoEntity = veiculoBuilderInTest.builderVeiculo();
         Optional<VeiculosEntity> veiculo = Optional.of(veiculoEntity);
@@ -127,7 +127,7 @@ public class VeiculosServiceTest {
     }
 
     @Test
-    public void testDeleteVeiculo_NonExistingId_ReturnsEmptyOptional() {
+    void testDeleteVeiculo_NonExistingId_ReturnsEmptyOptional() {
         Long id = 2L;
         when(veiculoBuilder.builderById(id)).thenReturn(Optional.empty());
 

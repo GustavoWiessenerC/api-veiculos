@@ -24,12 +24,12 @@ public class VeiculoValidatorTest {
     private VeiculoValidator veiculoValidator;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         MockitoAnnotations.openMocks(this);
     }
 
     @Test
-    public void testExistVeiculoById_ExistingId_ReturnsOptionalVeiculoEntity() {
+    void testExistVeiculoById_ExistingId_ReturnsOptionalVeiculoEntity() {
         Long id = 1L;
         VeiculosEntity veiculoEntity = new VeiculosEntity();
         when(veiculosRepository.findById(id)).thenReturn(Optional.of(veiculoEntity));
@@ -40,7 +40,7 @@ public class VeiculoValidatorTest {
     }
 
     @Test
-    public void testExistVeiculoById_NonExistingId_ReturnsEmptyOptional() {
+    void testExistVeiculoById_NonExistingId_ReturnsEmptyOptional() {
         Long id = 2L;
         when(veiculosRepository.findById(id)).thenReturn(Optional.empty());
 

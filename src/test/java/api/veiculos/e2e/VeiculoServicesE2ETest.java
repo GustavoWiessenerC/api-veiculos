@@ -23,13 +23,13 @@ public class VeiculoServicesE2ETest {
     private BuilderGenerete builder;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         RestAssured.port = port;
         builder = new BuilderGenerete();
     }
 
     @Test
-    public void e2eTestingGenerateServices() {
+    void e2eTestingGenerateServices() {
         VeiculosEntity veiculo = builder.builderVeiculo();
 
         int createdVeiculoId = createOperationVeiculoResultInId(veiculo);

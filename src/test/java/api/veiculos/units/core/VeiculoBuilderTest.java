@@ -22,12 +22,12 @@ public class VeiculoBuilderTest {
     private VeiculoBuilder veiculoBuilder;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         MockitoAnnotations.openMocks(this);
     }
 
     @Test
-    public void testBuilderById() {
+    void testBuilderById() {
         Long id = 1L;
         VeiculosEntity veiculo = new VeiculosEntity();
         veiculo.setId(id);
@@ -43,7 +43,7 @@ public class VeiculoBuilderTest {
     }
 
     @Test
-    public void testBuilderGenerete() {
+    void testBuilderGenerete() {
         VeiculosEntity veiculo = new VeiculosEntity();
         veiculo.setMarca("Fiat");
         veiculo.setModelo("Uno");

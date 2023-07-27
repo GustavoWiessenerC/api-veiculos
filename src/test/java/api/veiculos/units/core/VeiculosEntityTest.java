@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class VeiculosEntityTest {
 
     @Test
-    public void testVeiculoEntity() {
+    void testVeiculoEntity() {
         VeiculosEntity veiculo = new VeiculosEntity();
         veiculo.setId(1L);
         veiculo.setAno("2023");

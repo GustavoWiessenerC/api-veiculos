@@ -24,12 +24,12 @@ public class VeiculosControllerTest {
     private VeiculosController veiculosController;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         MockitoAnnotations.openMocks(this);
     }
 
     @Test
-    public void testCreate() {
+    void testCreate() {
         VeiculosEntity veiculo = new VeiculosEntity();
         veiculo.setMarca("Ford");
         veiculo.setModelo("Fiesta");
@@ -42,7 +42,7 @@ public class VeiculosControllerTest {
     }
 
     @Test
-    public void testGetById() {
+    void testGetById() {
 
         Long id = 1L;
         VeiculosEntity veiculo = new VeiculosEntity();
@@ -58,7 +58,7 @@ public class VeiculosControllerTest {
     }
 
     @Test
-    public void testGetAll() {
+    void testGetAll() {
 
         List<VeiculosEntity> veiculos = new ArrayList<>();
         VeiculosEntity veiculo1 = new VeiculosEntity();
@@ -79,7 +79,7 @@ public class VeiculosControllerTest {
     }
 
     @Test
-    public void testPutVeiculo() {
+    void testPutVeiculo() {
 
         Long id = 1L;
         VeiculosEntity veiculoExistente = new VeiculosEntity();
@@ -100,7 +100,7 @@ public class VeiculosControllerTest {
     }
 
     @Test
-    public void testDeleteVeiculo() {
+    void testDeleteVeiculo() {
 
         Long id = 1L;
         VeiculosEntity veiculoExistente = new VeiculosEntity();
