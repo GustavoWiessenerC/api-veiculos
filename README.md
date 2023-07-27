@@ -33,8 +33,11 @@ A API oferece os seguintes endpoints:
 ### Execute o projeto usando o Gradle:
 - ./gradlew bootRun
 
-### Testes Unitários:
+#### Testes Unitários:
 - ./gradlew test --tests "api.veiculos.units.
 
-### Testes de Integração :
+#### Testes de Integração :
 - ./gradlew test --tests "api.veiculos.integration.*"
+
+#### Testes E2E :
+- ./gradlew test --tests "api.veiculos.e2e.*"
