@@ -22,11 +22,8 @@ jobs:
       - name: Grant execute permission to Gradle Wrapper
         run: chmod +x ./gradlew
 
-      - name: Build with Gradle
-        run: ./gradlew build --info
-
-      - name: Report in sonarQube
-        run: ./gradlew test jacocoTestReport sonarqube --warning-mode all
+      - name: Build with Gradle and run SonarQube analysis
+        run: ./gradlew build sonarqube --info
 
   unit-tests:
     runs-on: ubuntu-latest
