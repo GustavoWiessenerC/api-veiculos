@@ -40,6 +40,8 @@ dependencies {
 	testImplementation 'org.springframework.integration:spring-integration-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.rest-assured:rest-assured:4.3.3'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.0'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.0'
 }
 
 tasks.named('test') {
@@ -51,6 +53,8 @@ sonar {
 		property "sonar.projectKey", "GustavoWiessenerC_api-veiculos"
 		property "sonar.organization", "gustavowiessenerc"
 		property "sonar.host.url", "https://sonarcloud.io"
+		property "sonar.test.inclusions", "**/src/test/**"
+		property "sonar.test.exclusions", ""
 	}
 }
 jacocoTestReport {
