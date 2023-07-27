@@ -53,7 +53,6 @@ sonar {
 		property "sonar.organization", "gustavowiessenerc"
 		property "sonar.host.url", "https://sonarcloud.io"
 		property "sonar.test.inclusions", "**/src/test/**"
-		property "sonar.test.exclusions", ""
 	}
 }
 jacocoTestReport {
