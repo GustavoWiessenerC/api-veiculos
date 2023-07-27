@@ -25,7 +25,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("API - Cadastro de Veiculos")
+                .title("API - Cadastro e Gerenciamento de Veiculos")
                 .description("Aplicacao destinada ao gerenciamento de veiculos.")
                 .version("1.0.0")
                 .build();

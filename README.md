@@ -2,7 +2,7 @@
 
 Este é um projeto de API para gerenciamento de veículos. Ele permite criar, listar, atualizar e deletar informações sobre veículos.
 
-### Tecnologias utilizadas
+### Tecnologias utilizadas:
 
 - Java 17
 - Spring Boot
@@ -23,6 +23,9 @@ A API oferece os seguintes endpoints:
 
 - A API está documentada usando a especificação Swagger. Para acessar a documentação da API, acesse http://localhost:8080/swagger-ui.html após iniciar o projeto.
 
+
+- ![](swagger.PNG)
+- 
 ### Execute o projeto usando o Gradle:
 - ./gradlew bootRun
 
