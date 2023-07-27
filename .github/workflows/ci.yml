@@ -116,4 +116,4 @@ jobs:
 
     steps:
       - name: Deploy
-        run: echo "Hello, World!"
+        run: echo "Hello!"
