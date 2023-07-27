@@ -19,6 +19,9 @@ jobs:
           java-version: 17
           distribution: temurin
 
+      - name: Grant execute permission to Gradle Wrapper
+        run: chmod +x ./gradlew
+
       - name: Build with Gradle
         run: ./gradlew build --info
 
@@ -35,6 +38,9 @@ jobs:
           java-version: 17
           distribution: temurin
 
+      - name: Grant execute permission to Gradle Wrapper
+        run: chmod +x ./gradlew
+
       - name: Run unit tests
         run: ./gradlew test --tests "api.veiculos.units.*"
 
@@ -50,6 +56,9 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
+
+      - name: Grant execute permission to Gradle Wrapper
+        run: chmod +x ./gradlew
 
       - name: Run integration tests
         run: ./gradlew test --tests "api.veiculos.integration.*"
