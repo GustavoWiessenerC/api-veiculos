@@ -5,6 +5,7 @@ Este é um projeto de API para gerenciamento de veículos. Ele permite criar, li
 ### Tecnologias utilizadas:
 
 - Java 17
+- SonarCloud
 - Spring Boot
 - Gradle
 - RestAssured
@@ -25,7 +26,6 @@ A API oferece os seguintes endpoints:
 
 ![](swagger.PNG)
 
-
 ### Jobs:
 
 ![](jobs.PNG)
@@ -34,6 +34,11 @@ A API oferece os seguintes endpoints:
 
 ![](test.PNG)
 
+### Métricas SonarCloud:
+
+![](sonar-cloud-1.PNG)
+
+![](report-sonarCloud.PNG)
 
 ### Execute o projeto usando o Gradle:
 - ./gradlew bootRun
