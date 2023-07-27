@@ -46,9 +46,9 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@master
         with:
           projectBaseDir: ./
-          env:
-            ORGANIZATION: ${{ secrets.ORGANIZATION }}
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        env:
+          ORGANIZATION: ${{ secrets.ORGANIZATION }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   unit-tests:
     runs-on: ubuntu-latest
@@ -116,4 +116,4 @@ jobs:
 
     steps:
       - name: Deploy
-        run: echo "Hello!"
+        run: echo "Hello, World!"
