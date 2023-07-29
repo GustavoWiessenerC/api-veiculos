@@ -12,14 +12,18 @@ import java.util.Optional;
 @Service
 public class VeiculosService {
 
-    @Autowired
-    private VeiculosRepository veiculosRepository;
+    private final VeiculosRepository veiculosRepository;
+    private final VeiculoValidator veiculoValidator;
+    private final VeiculoBuilder veiculoBuilder;
 
     @Autowired
-    private VeiculoValidator veiculoValidator;
-
-    @Autowired
-    private VeiculoBuilder veiculoBuilder;
+    public VeiculosService(VeiculoValidator veiculoValidator, VeiculoBuilder veiculoBuilder,
+                           VeiculosRepository veiculosRepository) {
+        super();
+        this.veiculoBuilder = veiculoBuilder;
+        this.veiculosRepository = veiculosRepository;
+        this.veiculoValidator = veiculoValidator;
+    }
 
     public List<VeiculosEntity> getAllVeiculos() {
         return veiculosRepository.findAll();

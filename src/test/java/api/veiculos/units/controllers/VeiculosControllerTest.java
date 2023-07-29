@@ -2,15 +2,17 @@ package api.veiculos.units.controllers;
 
 import api.veiculos.controllers.VeiculosController;
 import api.veiculos.core.entity.VeiculosEntity;
-import api.veiculos.service.VeiculosService;
+import api.veiculos.facade.VeiculosFacade;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.when;
@@ -18,7 +20,7 @@ import static org.mockito.Mockito.when;
 public class VeiculosControllerTest {
 
     @Mock
-    private VeiculosService veiculosService;
+    private VeiculosFacade veiculosFacade;
 
     @InjectMocks
     private VeiculosController veiculosController;
@@ -34,7 +36,7 @@ public class VeiculosControllerTest {
         veiculo.setMarca("Ford");
         veiculo.setModelo("Fiesta");
 
-        when(veiculosService.createVeiculo(any())).thenReturn(veiculo);
+        when(veiculosFacade.createVeiculo(any())).thenReturn(veiculo);
 
         VeiculosEntity result = veiculosController.create(veiculo);
 
@@ -50,7 +52,7 @@ public class VeiculosControllerTest {
         veiculo.setMarca("Ford");
         veiculo.setModelo("Fiesta");
 
-        when(veiculosService.getVeiculoFindById(id)).thenReturn(Optional.of(veiculo));
+        when(veiculosFacade.getVeiculoById(id)).thenReturn(Optional.of(veiculo));
 
         Optional<VeiculosEntity> result = veiculosController.getById(id);
 
@@ -71,7 +73,7 @@ public class VeiculosControllerTest {
         veiculo2.setModelo("Onix");
         veiculos.add(veiculo2);
 
-        when(veiculosService.getAllVeiculos()).thenReturn(veiculos);
+        when(veiculosFacade.getAllVeiculos()).thenReturn(veiculos);
 
         List<VeiculosEntity> result = veiculosController.getAll();
 
@@ -92,7 +94,7 @@ public class VeiculosControllerTest {
         veiculoAtualizado.setMarca("Chevrolet");
         veiculoAtualizado.setModelo("Onix");
 
-        when(veiculosService.putVeiculo(id, veiculoAtualizado)).thenReturn(veiculoExistente);
+        when(veiculosFacade.updateVeiculo(id, veiculoAtualizado)).thenReturn(veiculoExistente);
 
         VeiculosEntity result = veiculosController.putVeiculo(id, veiculoAtualizado);
 
@@ -108,7 +110,7 @@ public class VeiculosControllerTest {
         veiculoExistente.setMarca("Ford");
         veiculoExistente.setModelo("Fiesta");
 
-        when(veiculosService.deleteVeiculo(id)).thenReturn(Optional.of(veiculoExistente));
+        when(veiculosFacade.deleteVeiculo(id)).thenReturn(Optional.of(veiculoExistente));
 
         Optional<VeiculosEntity> result = veiculosController.deleteVeiculo(id);
 

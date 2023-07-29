@@ -1,7 +1,7 @@
 package api.veiculos.controllers;
 
 import api.veiculos.core.entity.VeiculosEntity;
-import api.veiculos.service.VeiculosService;
+import api.veiculos.facade.VeiculosFacade;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,28 +16,32 @@ import java.util.Optional;
 @Api(tags = "Veiculos", description = "API para gerenciamento de veiculos")
 public class VeiculosController {
 
+    private final VeiculosFacade veiculosFacade;
+
     @Autowired
-    private VeiculosService veiculosService;
+    public VeiculosController(VeiculosFacade veiculosFacade) {
+        this.veiculosFacade = veiculosFacade;
+    }
 
     @PostMapping("/criar")
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation(value = "Cria um novo veiculo")
     public VeiculosEntity create(@RequestBody VeiculosEntity veiculo) {
-        return veiculosService.createVeiculo(veiculo);
+        return veiculosFacade.createVeiculo(veiculo);
     }
 
     @GetMapping("/listar/{id}")
     @ApiOperation(value = "Lista um veiculo por ID")
     @ResponseStatus(HttpStatus.OK)
     public Optional<VeiculosEntity> getById(@PathVariable("id") Long id) {
-        return veiculosService.getVeiculoFindById(id);
+        return veiculosFacade.getVeiculoById(id);
     }
 
     @GetMapping("/listar")
     @ApiOperation(value = "Lista todos os veiculo")
     @ResponseStatus(HttpStatus.OK)
     public List<VeiculosEntity> getAll() {
-        return veiculosService.getAllVeiculos();
+        return veiculosFacade.getAllVeiculos();
     }
 
     @PutMapping("/alterar/{id}")
@@ -46,14 +50,14 @@ public class VeiculosController {
     public VeiculosEntity putVeiculo(@PathVariable("id") Long id,
                                      @RequestBody VeiculosEntity veiculo) {
 
-        return veiculosService.putVeiculo(id, veiculo);
+        return veiculosFacade.updateVeiculo(id, veiculo);
     }
 
     @DeleteMapping("/deletar/{id}")
     @ApiOperation(value = "Deleta um veiculo por ID")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Optional<VeiculosEntity> deleteVeiculo(@PathVariable("id") Long id) {
-        return veiculosService.deleteVeiculo(id);
+        return veiculosFacade.deleteVeiculo(id);
     }
 
 }
