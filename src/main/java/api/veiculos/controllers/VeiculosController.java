@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,14 +27,14 @@ public class VeiculosController {
     @PostMapping("/criar")
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation(value = "Cria um novo veiculo")
-    public VeiculosEntity create(@RequestBody VeiculosEntity veiculo) {
+    public VeiculosEntity create(@Valid @RequestBody VeiculosEntity veiculo) {
         return veiculosFacade.createVeiculo(veiculo);
     }
 
     @GetMapping("/listar/{id}")
     @ApiOperation(value = "Lista um veiculo por ID")
     @ResponseStatus(HttpStatus.OK)
-    public Optional<VeiculosEntity> getById(@PathVariable("id") Long id) {
+    public Optional<VeiculosEntity> getById(@Valid @PathVariable("id") Long id) {
         return veiculosFacade.getVeiculoById(id);
     }
 
@@ -48,7 +49,7 @@ public class VeiculosController {
     @ApiOperation(value = "Altera dados um veiculo por ID")
     @ResponseStatus(HttpStatus.OK)
     public VeiculosEntity putVeiculo(@PathVariable("id") Long id,
-                                     @RequestBody VeiculosEntity veiculo) {
+                                     @Valid @RequestBody VeiculosEntity veiculo) {
 
         return veiculosFacade.updateVeiculo(id, veiculo);
     }
@@ -56,7 +57,7 @@ public class VeiculosController {
     @DeleteMapping("/deletar/{id}")
     @ApiOperation(value = "Deleta um veiculo por ID")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public Optional<VeiculosEntity> deleteVeiculo(@PathVariable("id") Long id) {
+    public Optional<VeiculosEntity> deleteVeiculo(@Valid @PathVariable("id") Long id) {
         return veiculosFacade.deleteVeiculo(id);
     }
 

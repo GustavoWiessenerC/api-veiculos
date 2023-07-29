@@ -3,7 +3,6 @@ package api.veiculos.core.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import lombok.NonNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -41,7 +40,7 @@ public class VeiculosEntity {
 
     @ApiModelProperty(notes = "Indicador se o veiculo possui carroceria", example = "true")
     @Column(nullable = false)
-    @NonNull
+    @NotNull
     private boolean carroceria;
 
 }
