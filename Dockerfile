@@ -8,8 +8,11 @@ RUN apt-get install openjdk-17-jdk -y
 # Defina o diretório de trabalho dentro do contêiner
 WORKDIR /app
 
-# Copie os dados da app supondo o Dockerfile que esteja no diretorio raiz
+# Copie os dados da app supondo o Dockerfile que esteja no diretório raiz
 COPY . .
+
+# Conceda permissão de execução ao gradlew
+RUN chmod +x ./gradlew
 
 # Run build para geração do Jar
 RUN ./gradlew bootJar --no-daemon
