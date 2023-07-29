@@ -8,6 +8,10 @@ RUN apt-get install openjdk-17-jdk -y
 # Defina o diretório de trabalho dentro do contêiner
 WORKDIR /app
 
+RUN ls -la /app/build/libs
+
+RUN pwd
+
 # Copie os dados da app supondo o Dockerfile que esteja no diretório raiz
 COPY . .
 
