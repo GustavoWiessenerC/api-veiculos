@@ -8,10 +8,6 @@ RUN apt-get install openjdk-17-jdk -y
 # Defina o diretório de trabalho dentro do contêiner
 WORKDIR /app
 
-RUN ls -la /app/build/libs
-
-RUN pwd
-
 # Copie os dados da app supondo o Dockerfile que esteja no diretório raiz
 COPY . .
 
@@ -31,7 +27,7 @@ EXPOSE 8080
 WORKDIR /app
 
 # Copie o JAR do estágio de construção para o estágio final
-COPY --from=build /app/build/libs/api-veiculos-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/build/libs/veiculos-0.0.1-SNAPSHOT.jar app.jar
 
 # Comando para executar seu aplicativo Spring Boot quando o contêiner for iniciado
 ENTRYPOINT ["java", "-jar", "app.jar"]
