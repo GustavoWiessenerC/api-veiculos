@@ -46,7 +46,7 @@ public class VeiculosService {
 
             return veiculosRepository.save(veiculoExistenteObj);
         } else {
-            throw new IllegalArgumentException("Veículo não encontrado ou ID inválido.");
+            throw new IllegalArgumentException("Veiculo nao encontrado ou ID invalido.");
         }
     }
 
