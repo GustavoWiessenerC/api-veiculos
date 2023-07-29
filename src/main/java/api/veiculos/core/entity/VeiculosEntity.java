@@ -24,7 +24,7 @@ public class VeiculosEntity {
     @Column(nullable = false)
     @NotNull(message = "Ano nao pode ser nulo.")
     @NotEmpty(message = "Ano nao pode ser vazio.")
-    @Pattern(regexp = "\\d{4}", message = "Ano deve conter exatamente 4 dígitos.")
+    @Pattern(regexp = "\\d{4}", message = "Ano deve conter exatamente 4 posicoes.")
     private String ano;
 
     @ApiModelProperty(notes = "Marca do veiculo", example = "BMW")
