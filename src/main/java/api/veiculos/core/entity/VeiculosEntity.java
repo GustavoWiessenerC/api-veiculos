@@ -8,27 +8,27 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@ApiModel(description = "Representação de um veículo")
+@ApiModel(description = "Representacao de um veiculo")
 public class VeiculosEntity {
 
-    @ApiModelProperty(notes = "ID do veículo", example = "1")
+    @ApiModelProperty(notes = "ID do veiculo", example = "1")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ApiModelProperty(notes = "Ano do veículo", example = "2023")
+    @ApiModelProperty(notes = "Ano do veiculo", example = "2023")
     @Column(nullable = false)
     private String ano;
 
-    @ApiModelProperty(notes = "Marca do veículo", example = "BMW")
+    @ApiModelProperty(notes = "Marca do veiculo", example = "BMW")
     @Column(nullable = false)
     private String marca;
 
-    @ApiModelProperty(notes = "Modelo do veículo", example = "115I")
+    @ApiModelProperty(notes = "Modelo do veiculo", example = "115I")
     @Column(nullable = false)
     private String modelo;
 
-    @ApiModelProperty(notes = "Indicador se o veículo possui carroceria", example = "true")
+    @ApiModelProperty(notes = "Indicador se o veiculo possui carroceria", example = "true")
     @Column(nullable = false)
     private boolean carroceria;
 
