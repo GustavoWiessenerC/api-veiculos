@@ -22,20 +22,20 @@ public class VeiculosEntity {
 
     @ApiModelProperty(notes = "Ano do veiculo", example = "2023")
     @Column(nullable = false)
-    @NotNull(message = "Ano não pode ser nulo")
+    @NotNull(message = "Ano nao pode ser nulo.")
     @NotEmpty(message = "Ano nao pode ser vazio.")
     @Pattern(regexp = "\\d{4}", message = "Ano deve conter exatamente 4 dígitos.")
     private String ano;
 
     @ApiModelProperty(notes = "Marca do veiculo", example = "BMW")
     @Column(nullable = false)
-    @NotNull(message = "Marca não pode ser nulo")
+    @NotNull(message = "Marca nao pode ser nulo.")
     @NotEmpty(message = "Marca nao pode ser vazio.")
     private String marca;
 
     @ApiModelProperty(notes = "Modelo do veiculo", example = "115I")
     @Column(nullable = false)
-    @NotNull(message = "Modelo não pode ser nulo")
+    @NotNull(message = "Modelo nao pode ser nulo.")
     @NotEmpty(message = "Modelo nao pode ser vazio.")
     private String modelo;
 
