@@ -7,6 +7,7 @@ import lombok.NonNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 @Entity
@@ -21,20 +22,20 @@ public class VeiculosEntity {
 
     @ApiModelProperty(notes = "Ano do veiculo", example = "2023")
     @Column(nullable = false)
-    @NonNull
+    @NotNull(message = "Ano não pode ser nulo")
     @NotEmpty(message = "Ano nao pode ser vazio.")
     @Pattern(regexp = "\\d{4}", message = "Ano deve conter exatamente 4 dígitos.")
     private String ano;
 
     @ApiModelProperty(notes = "Marca do veiculo", example = "BMW")
     @Column(nullable = false)
-    @NonNull
+    @NotNull(message = "Marca não pode ser nulo")
     @NotEmpty(message = "Marca nao pode ser vazio.")
     private String marca;
 
     @ApiModelProperty(notes = "Modelo do veiculo", example = "115I")
     @Column(nullable = false)
-    @NonNull
+    @NotNull(message = "Modelo não pode ser nulo")
     @NotEmpty(message = "Modelo nao pode ser vazio.")
     private String modelo;
 

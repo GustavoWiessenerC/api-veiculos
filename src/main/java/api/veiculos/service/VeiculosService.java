@@ -60,5 +60,6 @@ public class VeiculosService {
         } else {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Veiculo nao encontrado ou ID invalido.");
         }
+        return veiculo;
     }
 }
