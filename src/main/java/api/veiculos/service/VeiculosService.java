@@ -5,7 +5,10 @@ import api.veiculos.core.entity.VeiculosEntity;
 import api.veiculos.repository.VeiculosRepository;
 import api.veiculos.validator.VeiculoValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -46,13 +49,16 @@ public class VeiculosService {
 
             return veiculosRepository.save(veiculoExistenteObj);
         } else {
-            throw new IllegalArgumentException("Veiculo nao encontrado ou ID invalido.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Veiculo nao encontrado ou ID invalido.");
         }
     }
 
     public Optional<VeiculosEntity> deleteVeiculo(Long id) {
         Optional<VeiculosEntity> veiculo = veiculoBuilder.builderById(id);
-        veiculo.ifPresent(veiculos -> veiculosRepository.deleteById(veiculos.getId()));
-        return veiculo;
+        if (veiculo.isPresent()) {
+            veiculosRepository.deleteById(veiculo.get().getId());
+        } else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Veiculo nao encontrado ou ID invalido.");
+        }
     }
 }
