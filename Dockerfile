@@ -18,7 +18,7 @@ RUN chmod +x ./gradlew
 RUN ./gradlew bootJar --no-daemon
 
 # Final Stage - Slim JDK
-FROM openjdk:17-jdk-slim
+FROM openjdk:18.0.1-jdk-slim
 
 # Exponha a porta em que seu aplicativo Spring Boot escuta (altere-a se necessário)
 EXPOSE 8080
